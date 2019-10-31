@@ -97,6 +97,10 @@ styleshare 1 : N keyword
 |----------|----------|----------|----------|
 | /api/megazine/ | | | magazine api(rest_framework)|
 | /api/styleshare/ | | | styleshare api(rest_framework)|
+
+| url | view | method | |
+|----------|----------|----------|----------|
+| / | | | index 페이지 |
 | /magazine/|||magazine list 페이지(index)|
 | /magazine/{id}|||magazine detail page|
 | /styleShare/|||style share list 페이지(index)|
