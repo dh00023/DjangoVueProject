@@ -7,7 +7,7 @@
       <div id="tab">
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <router-link to="/magazine" class="nav-link">Lookbook</router-link>
+            <router-link to="/lookbook" class="nav-link">Lookbook</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/styleShare" class="nav-link">Style Share</router-link>

@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  	<h4>LookBook</h4>
+    <LookBookBanner />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import LookBookBanner from '@/components/LookBookBanner.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    LookBookBanner
   }
 }
 </script>
+
+<style scoped>
+	h4 {
+		padding-left: 20px;
+	}
+</style>
