@@ -1,12 +1,30 @@
 <template>
-	<div class="card" data-toggle="modal" data-target="#exampleModal">
-		<img src="//thumb2.cjmall.net/unsafe/360x0/itemImage.cjmall.net/goods_images/56/387/56176387L.jpg" class="card-img-top">
+	<div class="card">
+		<img :src="imageUrl" class="card-img-top">
 		<small class="text-muted">
-			author @<cite title="Source Title">dh_0023</cite>
+			author @<cite title="Source Title">{{ author }}</cite>
 		</small>
 	</div>	
 </template>
-<script></script>
+<script>
+	export default {
+		name: 'style-share-item',
+		props: {
+			styleshare: {
+				type: Object,
+				required: true
+			}
+		},
+		data() {
+			return {
+				'id': this.styleshare.id,
+				'author': this.styleshare.author,
+				'imageUrl': this.styleshare.imageUrl,
+				'items': this.styleshare.items
+			}
+		}
+	}
+</script>
 <style>
 .card {
 	background: #F5F5F5;

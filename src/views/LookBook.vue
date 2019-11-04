@@ -1,19 +1,24 @@
 <template>
 	<div class="container" id="lookbook">
-		<LookBookBanner/>
-		<LookBookContent/>
+		<LookBookBanners />
+		<LookBookContent v-for="(lookbook) in getLookBook" :key="lookbook.id" :lookbook="lookbook"/>
 	</div>
 </template>
 <script>
-	import LookBookBanner from '@/components/LookBookBanner.vue'
+	import LookBookBanners from '@/components/LookBookBanners.vue'
 	import LookBookContent from '@/components/LookBookContent.vue'
 	
 	export default {
 		name: 'lookbook',
   	components: {
-    	LookBookBanner,
+    	LookBookBanners,
     	LookBookContent
-  	}
+  	},
+  	computed: {
+			getLookBook() {
+				return this.$store.state.lookbook;
+			}
+		}
 	}
 </script>
 <style scoped>

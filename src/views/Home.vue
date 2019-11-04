@@ -1,24 +1,42 @@
 <template>
-  <div class="home">
-  	<h4>LookBook</h4>
-    <LookBookBanner />
+  <div id="home">
+  	<h4 class="mt-4">LookBook</h4>
+  	<LookBookBanners />
+    <div id="item-list" class="mt-4">
+    	<h4>Item List</h4>
+    	<div class="item-list" >
+		    <Item v-for="(item) in getItemList" :key="item.id" :item="item"></Item>
+	    </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import LookBookBanner from '@/components/LookBookBanner.vue'
+import LookBookBanners from '@/components/LookBookBanners.vue'
+import Item from '@/components/Item.vue'
 
 export default {
   name: 'home',
   components: {
-    LookBookBanner
-  }
+    LookBookBanners,
+    Item
+  },
+  computed: {
+  	getItemList() {
+  		return this.$store.state.items;
+		}
+	}
 }
 </script>
 
 <style scoped>
 	h4 {
 		padding-left: 20px;
+	}
+	.item-list {
+		column-count: 2;
+		column-gap: 1em; 
+		margin: 0 0.8em;
 	}
 </style>
