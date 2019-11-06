@@ -20,9 +20,9 @@ Python, Django, Vue.js를 이용하여 New Brand Shop을 빠르게 개발.
 USER 1 : N Magazine
 USER 1 : N styleshare
 
-Magazine 1 : N Item
+Magazine N : N Item
 
-styleshare 1 : N Item
+styleshare N : N Item
 styleshare 1 : N keyword
 
 여기서는 프로토타입으로 간편하게 만들기 위해서 1:N관계로 모델 설계를 했지만 추후에 N:M 관계로 확장할 수 있다.
@@ -105,3 +105,14 @@ styleshare 1 : N keyword
 | /magazine/{id}|||magazine detail page|
 | /styleShare/|||style share list 페이지(index)|
 | /styleShare/id|||style share detail page|
+
+
+## Image Field
+
+- pillow
+
+Python Image Library 일종으로 파이썬으로 이미지를 처리하고 싶을 때 사용한다. 이미지 관련 width, height, format, resize 작업을 수행
+
+```console
+$ pip install pillow
+```
