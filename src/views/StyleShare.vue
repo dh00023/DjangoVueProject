@@ -11,6 +11,9 @@
 		components: {
 			StyleShareItem
 		},
+		created() {
+			this.$store.dispatch('getStyleShare');
+		},
 		computed: {
 			getStyleShare() {
 				return this.$store.state.styleshare;

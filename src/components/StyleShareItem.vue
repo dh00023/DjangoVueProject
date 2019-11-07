@@ -1,5 +1,5 @@
 <template>
-	<div class="card">
+	<div class="card" id="style-card">
 		<img :src="imageUrl" class="card-img-top">
 		<small class="text-muted">
 			author @<cite title="Source Title">{{ author }}</cite>
@@ -26,7 +26,7 @@
 	}
 </script>
 <style>
-.card {
+#style-card {
 	background: #F5F5F5;
 	padding: 5px;
 	margin: 0 0 1em;

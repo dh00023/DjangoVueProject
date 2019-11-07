@@ -7,7 +7,7 @@
 				<p class="card-text">
 					{{ text }}
 				</p>
-				<LookBookItem v-for="(item) in items" :key="item.id" :item="item" />
+				<LookBookItem v-for="(item) in items" :key="item.itemCode" :item="item" />
 			</div>
 
 		</div>

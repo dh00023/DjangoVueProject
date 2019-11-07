@@ -9,4 +9,5 @@ router.register(r'styleshare', views.StyleShareViewSet)
 
 urlpatterns = [
 	path('', include(router.urls)),
+	path('brandItemList/', views.BrandItemList)
 ]

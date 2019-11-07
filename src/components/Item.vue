@@ -1,7 +1,7 @@
 <template>
 	<div class="card">
-		<img :src="imageUrl" class="card-img-top" alt="...">
-		<p><small>{{ name }}</small></p>
+		<img :src="setImageUrl" class="card-img-top" alt="...">
+		<p class="card-text"><small>{{ itemName | truncate()}}</small></p>
 		<p>{{ price }}원</p>
 	</div>
 </template>
@@ -16,10 +16,15 @@
 		},
 		data() {
 			return {
-				'id': this.item.id,
-				'name': this.item.name,
-				'imageUrl': this.item.imageUrl,
-				'price': this.item.price
+				'itemCode': this.item.itemCode,
+				'itemName': this.item.itemNm,
+				'imageUrl': this.item.pmgItemImgUrl,
+				'price': this.item.pmgCustomerPrice
+			}
+		},
+		computed: {
+			setImageUrl() {
+				return '//thumb.cjmall.net/unsafe/fit-in/280x280/itemimage.cjmall.net/'.concat(this.imageUrl);
 			}
 		}
 	}
@@ -43,5 +48,8 @@
 	}
 	p {
 		margin: 0;
+		height: 48px;
+		overflow: hidden;
 	}
 </style>
+

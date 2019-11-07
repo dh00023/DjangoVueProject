@@ -22,6 +22,9 @@
 		components: {
 			LookBookBanner
 		},
+		created() {
+			this.$store.dispatch('getLookBook');
+		},
 		computed: {
 			getLookBook() {
 				return this.$store.state.lookbook;

@@ -10,10 +10,11 @@ for key, value in secrets.items():
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS += []
+ALLOWED_HOSTS += [ 'local-display.cjmall.com', '127.0.0.1', 'search-dev.cjamll.com']
 
 INSTALLED_APPS += [
     'debug_toolbar',
+    'django_extensions'
 ]
 
 MIDDLEWARE += [

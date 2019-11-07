@@ -2,7 +2,7 @@
 	<div class="card-footer row">
 		<img :src="imageUrl" class="card-img-top col-5">
 		<div class="col-7">
-			<p>{{name}}</p>
+			<p>{{itemName}}</p>
 			<p>{{price}}원</p>
 		</div>
 	</div>
@@ -18,8 +18,8 @@
   	},
   	data() {
   		return {
-  			'id': this.item.id,
-	  		'name': this.item.name,
+  			'itemCode': this.item.itemCode,
+	  		'itemName': this.item.itemName,
 	  		'imageUrl': this.item.imageUrl,
 	  		'price': this.item.price
   		}

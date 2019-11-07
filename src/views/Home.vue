@@ -5,7 +5,7 @@
     <div id="item-list" class="mt-4">
     	<h4>Item List</h4>
     	<div class="item-list" >
-		    <Item v-for="(item) in getItemList" :key="item.id" :item="item"></Item>
+		    <Item v-for="(item) in getItemList" :key="item.itemCode" :item="item"></Item>
 	    </div>
     </div>
   </div>
@@ -26,7 +26,10 @@ export default {
   	getItemList() {
   		return this.$store.state.items;
 		}
-	}
+	},
+  created() {
+      this.$store.dispatch('getItems');
+    },
 }
 </script>
 
