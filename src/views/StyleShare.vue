@@ -1,15 +1,25 @@
 <template>
-	<div class="cards" id="style_share">
-		<StyleShareItem v-for="(styleshare) in getStyleShare" :key="styleshare.id" :styleshare="styleshare" />
+	<div>
+		<div id="styleButton" class="row justify-content-center">
+			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addStyle" data-whatever="@mdo">+내 스타일 공유하기+</button>	
+		</div>
+		
+		<StyleShareForm />
+		<div class="cards">
+			<StyleSharePost v-for="(styleshare) in getStyleShare" :key="styleshare.id" :styleshare="styleshare" />
+		</div>	
 	</div>
+	
 </template>
 
 <script>
-	import StyleShareItem from '@/components/StyleShareItem.vue'
-	
+	import StyleSharePost from '@/components/styleshare/Post.vue'
+	import StyleShareForm from '@/components/styleshare/RegisterForm.vue'
+
 	export default {
 		components: {
-			StyleShareItem
+			StyleSharePost,
+			StyleShareForm
 		},
 		created() {
 			this.$store.dispatch('getStyleShare');
@@ -27,5 +37,17 @@
 	column-count: 2;
 	column-gap: 1em; 
 	margin: 0 0.8em;
+}
+#style-card {
+	padding: 5px;
+	margin: 0 0 1em;
+	width: 100%;
+	cursor: pointer;
+	transition: all 100ms ease-in-out;
+	display: inline-block;
+	-webkit-column-break-inside: avoid;
+}
+#styleButton{
+	margin: 1rem;
 }
 </style>

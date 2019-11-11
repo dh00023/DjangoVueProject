@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	import LookBookBanner from '@/components/LookBookBanner.vue'
+	import LookBookBanner from '@/components/lookbook/Banner.vue'
 	export default {
 		name: 'lookbook-banner',
 

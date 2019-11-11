@@ -1,12 +1,12 @@
 <template>
-	<div class="container" id="lookbook">
+	<div id="lookbook">
 		<LookBookBanners />
 		<LookBookContent v-for="(lookbook) in getLookBook" :key="lookbook.id" :lookbook="lookbook"/>
 	</div>
 </template>
 <script>
-	import LookBookBanners from '@/components/LookBookBanners.vue'
-	import LookBookContent from '@/components/LookBookContent.vue'
+	import LookBookBanners from '@/components/lookbook/BannerList.vue'
+	import LookBookContent from '@/components/lookbook/Content.vue'
 	
 	export default {
 		name: 'lookbook',

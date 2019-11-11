@@ -7,19 +7,19 @@
 				<p class="card-text">
 					{{ text }}
 				</p>
-				<LookBookItem v-for="(item) in items" :key="item.itemCode" :item="item" />
+				<CommonItem v-for="(item) in items" :key="item.itemCode" :item="item" />
 			</div>
 
 		</div>
 	</div>	
 </template>
 <script>
-	import LookBookItem from '@/components/LookBookItem.vue'
+	import CommonItem from '@/components/common/Item.vue'
 	
 	export default {
 		name: 'lookbook-content',
   	components: {
-    	LookBookItem
+    	CommonItem
   	},
   	props: {
   		lookbook: {
@@ -41,5 +41,8 @@
 <style scoped>
 	.card {
 		border-style: none !important;
+	}
+	img{
+		padding: 1rem;
 	}
 </style>

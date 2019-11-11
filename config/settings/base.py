@@ -103,7 +103,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/public/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'public/static')]
 
 REST_FRAMEWORK = {
@@ -111,3 +111,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     )
 }
+
+MEDIA_URL = 'static/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'static/media')

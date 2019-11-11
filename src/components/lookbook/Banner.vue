@@ -29,8 +29,6 @@
 			isActive() {
 				return this.index === 0;
 			}
-		},
-		methods: {
 		}
 	}
 </script>

@@ -9,8 +9,7 @@ for key, value in secrets.items():
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS += [ 'local-display.cjmall.com', '127.0.0.1', 'search-dev.cjamll.com']
+ALLOWED_HOSTS += [ 'local-display.cjmall.com', '127.0.0.1']
 
 INSTALLED_APPS += [
     'debug_toolbar',
@@ -42,3 +41,4 @@ WEBPACK_LOADER = {
 
 # MEDIA_URL = '/media/' # media 파일에 대한 url prifix
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads') # 업로드된 파일을 저장할 디렉토리 경
+# INTERNAL_IPS = ('127.0.0.1',)

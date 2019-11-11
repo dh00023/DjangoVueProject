@@ -2,6 +2,33 @@
 
 Python, Django, Vue.js를 이용하여 New Brand Shop을 빠르게 개발.
 
+- vue 서버 실행
+
+```console
+$ npm run serve
+```
+
+- django 서버 실행
+
+```console
+$ ./manage.py runserver
+```
+
+각각 서버를 실행한 후에 [http://localhost:8000](http://localhost:8000)으로 접속하면된다.
+
+- data 추가하기
+
+```console
+$ ./manage.py loaddata api/fixtures/data.json
+```
+
+- db migrations and data 삭제하기
+
+```console
+$ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+$ find . -path "*/migrations/*.pyc" -delete
+$ rm -rf config/db.sqlite3
+```
 
 ## 설계
 
@@ -17,12 +44,12 @@ Python, Django, Vue.js를 이용하여 New Brand Shop을 빠르게 개발.
 
 ### 테이블
 
-USER 1 : N Magazine
-USER 1 : N styleshare
+User 1 : N LookBook
+User 1 : N StyleShare
 
-Magazine N : N Item
+LookBook N : M Item
 
-styleshare N : N Item
+styleshare N : M Item
 styleshare 1 : N keyword
 
 여기서는 프로토타입으로 간편하게 만들기 위해서 1:N관계로 모델 설계를 했지만 추후에 N:M 관계로 확장할 수 있다.
@@ -36,44 +63,36 @@ styleshare 1 : N keyword
 |password | 비밀번호 |
 
 
-#### Magazine
+#### LookBook
 
 | field | comment |
 |----------|----------|
 |id|index|
 |title|타이틀|
 |content|내용|
-|bnrPhoto|매거진페이지 배너 이미지|
-|mainPhoto|매거진페이지 메인 이미지|
+|bnrImageUrl|매거진페이지 배너 이미지|
+|mainImageUrl|매거진페이지 메인 이미지|
+|items| many to many |
 |user_id|foreign key|
 
-#### MagazineDetail
-
-| field | comment |
-|----------|----------|
-|id|index|
-|html|wsywyg로 작성한 기술서|
-|magazine_id|foreign key|
 
 #### item
 
 | field | comment |
 |----------|----------|
-|itemCode(id)| 상품코드|
+|itemCode| 상품코드(pk)|
 |image| 상품 이미지|
 |price|가격|
 |itemName|상품명|
-|magazie_id | ForeignKey|
-|styleShare_id | ForeignKey|
 
 #### styleShare
 
 | field | comment |
 |----------|----------|
 |id|index|
-|username| instagramUserName|
-|itemCode|상품테이블 foriegn key|
-|mediaUrl| 게시글 등록 이미지 |
+|author| instagramUserName|
+|imageUrl| 게시글 등록 이미지 |
+|items|many to many|
 |user_id|foreign key|
 
 
@@ -89,30 +108,22 @@ styleshare 1 : N keyword
 
 - 브랜드샵 상품 리스트 불러오는 ( 기존 cjmall api )
 - 장고로 구현
-	- magazine(list, detail)
+	- lookbook(list, detail)
 	- styleShare(list, detail)
 
 
 | url | view | method | |
 |----------|----------|----------|----------|
-| /api/megazine/ | | | magazine api(rest_framework)|
+| /api/lookbook/ | | | magazine api(rest_framework)|
 | /api/styleshare/ | | | styleshare api(rest_framework)|
+
+### Page
+
+front쪽은 Vue만을 이용해서 구현한다.
 
 | url | view | method | |
 |----------|----------|----------|----------|
-| / | | | index 페이지 |
-| /magazine/|||magazine list 페이지(index)|
-| /magazine/{id}|||magazine detail page|
-| /styleShare/|||style share list 페이지(index)|
-| /styleShare/id|||style share detail page|
+| /||| index page |
+| /lookbook/|||magazine list 페이지(index)|
+| /styleshare/|||style share list 페이지(index)|
 
-
-## Image Field
-
-- pillow
-
-Python Image Library 일종으로 파이썬으로 이미지를 처리하고 싶을 때 사용한다. 이미지 관련 width, height, format, resize 작업을 수행
-
-```console
-$ pip install pillow
-```

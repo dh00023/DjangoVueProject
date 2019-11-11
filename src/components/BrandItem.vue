@@ -1,13 +1,13 @@
 <template>
 	<div class="card">
-		<img :src="setImageUrl" class="card-img-top" alt="...">
+		<img :src="setImageUrl" class="card-img-top" alt="..." @click="clickToItem">
 		<p class="card-text"><small>{{ itemName | truncate()}}</small></p>
 		<p>{{ price }}원</p>
 	</div>
 </template>
 <script>
 	export default {
-		name: 'item-list',
+		name: 'brand-item-list',
 		props: {
 			item: {
 				type: Object,
@@ -16,7 +16,7 @@
 		},
 		data() {
 			return {
-				'itemCode': this.item.itemCode,
+				'itemCode': this.item.itemCd,
 				'itemName': this.item.itemNm,
 				'imageUrl': this.item.pmgItemImgUrl,
 				'price': this.item.pmgCustomerPrice
@@ -25,6 +25,11 @@
 		computed: {
 			setImageUrl() {
 				return '//thumb.cjmall.net/unsafe/fit-in/280x280/itemimage.cjmall.net/'.concat(this.imageUrl);
+			}
+		},
+		methods: {
+			clickToItem() {
+				window.location.href = "https://display.cjmall.com/m/item/"+this.itemCode;
 			}
 		}
 	}
@@ -38,7 +43,6 @@
 		margin: 0 0 1em;
 		width: 100%;
 		cursor: pointer;
-		transition: all 100ms ease-in-out;
 		display: inline-block;
 		-webkit-column-break-inside: avoid;
 	}

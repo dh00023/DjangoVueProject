@@ -1,14 +1,19 @@
 <template>
 	<div class="card" id="style-card">
-		<img :src="imageUrl" class="card-img-top">
+		<img :src="`${base_url}`+imageUrl" class="card-img-top" data-toggle="modal" :data-target="'#styleShareModal'+id">
+		<StyleShareModal :styleshare="styleshare" />
 		<small class="text-muted">
 			author @<cite title="Source Title">{{ author }}</cite>
 		</small>
 	</div>	
 </template>
 <script>
+	import StyleShareModal from '@/components/styleshare/Modal.vue'
 	export default {
 		name: 'style-share-item',
+		components: {
+    	StyleShareModal
+  	},
 		props: {
 			styleshare: {
 				type: Object,
@@ -20,22 +25,13 @@
 				'id': this.styleshare.id,
 				'author': this.styleshare.author,
 				'imageUrl': this.styleshare.imageUrl,
-				'items': this.styleshare.items
+				'items': this.styleshare.items,
+				'base_url': process.env.BASE_URL
 			}
 		}
 	}
 </script>
 <style>
-#style-card {
-	background: #F5F5F5;
-	padding: 5px;
-	margin: 0 0 1em;
-	width: 100%;
-	cursor: pointer;
-	transition: all 100ms ease-in-out;
-	display: inline-block;
-	-webkit-column-break-inside: avoid;
-}
 img {
 	display: block;
 	width: 100%;

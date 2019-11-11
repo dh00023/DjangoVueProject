@@ -4,7 +4,7 @@
       <nav class="navbar justify-content-center">
         <router-link to="/" class="text-dark h3 pt-3">CelepShop</router-link>
       </nav>
-      <div id="tab">
+      <div id="tab" v-if="showTabView">
         <ul class="nav justify-content-center">
           <li class="nav-item">
             <router-link to="/lookbook" class="nav-link">Lookbook</router-link>
@@ -18,7 +18,16 @@
     <router-view/>
   </div>
 </template>
-
+<script>
+  export default {
+    computed: {
+      showTabView() {
+        window.console.log(document.location.pathname.indexOf('add'))
+        return (document.location.pathname.indexOf('add') < 0) ? true : false;
+      }
+    }
+  }
+</script>
 <style>
 #header a{
   color: black;

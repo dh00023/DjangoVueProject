@@ -15,11 +15,19 @@ export default new Vuex.Store({
   state: {
   	items: [],
   	lookbook: [],
-  	styleshare: []
+  	styleshare: [],
+  	brandItems: [],
+  	addStyleShare:{
+  		tags: [],
+  		items: [],
+  		image: {}
+  	}
   },
   // computed와 유사
-  getters: {  	
+  getters: {
   },
+  // mutation은 state 값을 변경하는 로직
+	// 인자를 받아 vuex에 넘겨줄 수 있고, methods와 연결
   mutations: {
   	successToGetLookBook(state, payload) {
   		state.lookbook = payload;
@@ -27,8 +35,17 @@ export default new Vuex.Store({
   	successToGetStyleShare(state, payload) {
   		state.styleshare = payload;
   	},
+  	succestToGetBrandItem(state, payload){
+  		state.brandItems = payload.result[0].rowDatas;
+  	},
   	succestToGetItem(state, payload){
-  		state.items = payload.result[0].rowDatas;
+  		state.items = payload;
+  	},
+  	addTag(state, payload) {
+  		state.addStyleShare.tags.push(payload);
+  	},
+  	checkedItem(state,payload){
+  		state.addStyleShare.items.push(payload);
   	}
   },
   // 비동기
@@ -45,12 +62,41 @@ export default new Vuex.Store({
 			}).catch(function() {
 			});
 		},
-		getItems(context) {
+		getBrandItems(context) {
 			axios.get('/api/brandItemList/').then(function(res) {
+				context.commit('succestToGetBrandItem',res.data);
+			}).catch(function() {
+			});
+		},
+		getItems(context) {
+			axios.get('/api/items/').then(function(res) {
+				res.data.forEach((item) => { 
+	        item.checked = false; 
+	      });
 				context.commit('succestToGetItem',res.data);
 			}).catch(function() {
 			});
 		},
+		addTag(context, payload) {
+			context.commit('addTag', payload);
+
+			axios.post('/api/tag/',{tag: 'test1'}).then(function(res){
+				window.console.log(res);
+			}).catch(function(err){
+				window.console.log(err);
+			});
+		},
+		addStyleShare(context, payload) {
+			axios.post('/api/styleshare/', payload).then(function(res){
+				window.console.log(res);
+			}).catch(function(err){
+				window.console.log(err);
+			});
+		},
+		checkedItem(context, payload){
+			context.commit('checkedItem', payload);
+		}
   },
   modules: {}
 });
+

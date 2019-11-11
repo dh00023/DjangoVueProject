@@ -1,11 +1,11 @@
 <template>
-	<div class="card-footer row">
+	<li class="card-footer row" @click="clickToItem">
 		<img :src="imageUrl" class="card-img-top col-5">
 		<div class="col-7">
 			<p>{{itemName}}</p>
 			<p>{{price}}원</p>
 		</div>
-	</div>
+	</li>
 </template>
 
 <script>
@@ -23,6 +23,11 @@
 	  		'imageUrl': this.item.imageUrl,
 	  		'price': this.item.price
   		}
-  	}
+  	},
+  	methods: {
+			clickToItem() {
+				window.location.href = "https://display.cjmall.com/m/item/"+this.itemCode;
+			}
+		}
 	}
 </script>

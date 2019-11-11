@@ -1,0 +1,42 @@
+[
+	{
+		"model": "api.styleshare",
+		"fields": {
+			// "imageUrl": "//thumb2.cjmall.net/unsafe/360x0/itemImage.cjmall.net/goods_images/56/387/56176387L.jpg",
+  		"author": "dh0023",
+			"items": [ "59122710"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "api.styleshare",
+		"fields": {
+			// "imageUrl": "//static.celebshop.com/skin/frontend/celebshop/mobile/images/lookbook/ce_19fw/ce_19fw_01.jpg",
+  		"author": "dh0023",
+			"items": [ "59098791"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "api.styleshare",
+		"fields": {
+			// "imageUrl": "https://opgg-com-image.akamaized.net/attach/images/20190226083413.642488.jpeg",
+  		"author": "dh0023",
+			"items": [ "59122710"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "api.styleshare",
+		"fields": {
+			// "imageUrl": "https://www.sports-g.com/wp-content/uploads/2018/11/%ED%8E%98%EC%9D%B4%EC%BB%A4.jpg",
+  		"author": "dh0023",
+			"items": [ "59098791"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29"
+		}
+	}
+]
