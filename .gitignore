@@ -2,7 +2,7 @@
 .idea/
 
 # Config folder
-.config_secret/
+# .config_secret/
 
 ### Django ###
 *.log
