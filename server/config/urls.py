@@ -32,7 +32,7 @@ urlpatterns = [
     path('api/auth/token/refresh/', refresh_jwt_token),
 
     # api
-    # path('api/magazines/', include('magazine.urls', 'magazine-api')),
+    path('api/magazines/', include('magazine.urls', 'magazine-api')),
     # path('api/styleshare/', include('styleshare.urls', 'styleshare-api')),
     path('api/users/', include('user.urls', 'users-api')),
 ]
