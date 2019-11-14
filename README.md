@@ -16,6 +16,7 @@ Before launching the project, you have to install packages.
 
 Install using `pip`
 
+
 ```
 $ pip install -r server/requirements/development.txt
 $ pip install -r server/requirements/production.txt

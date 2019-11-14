@@ -35,7 +35,7 @@ WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': DEBUG,
         'BUNDLE_DIR_NAME': '/bundles/',  # must end with slash
-        'STATS_FILE': os.path.join(ROOT_DIR, 'webpack-stats.json'),
+        'STATS_FILE': os.path.join(ROOT_DIR, 'client/webpack-stats.json'),
     }
 }
 

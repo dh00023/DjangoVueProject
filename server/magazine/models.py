@@ -1,7 +1,8 @@
 from django.conf import settings
-from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils import timezone
+
+from item.models import Item
 
 # Manager는 데이터베이스와 상호작용하는 인터페이스
 # Magazine.objects.all() 다음과 같이 접근하는데 이때 objects를 customize
@@ -25,13 +26,12 @@ class MagazineManager(models.Manager):
 		def active(self, *args, **kwargs):
 				return super(MagazineManager, self).filter(created_at__lte=timezone.now())
 
-# TODO: image upload field
 class Magazine(models.Model):
 	bnr_image_url = models.URLField("배너 이미지 url")
 	main_image_url = models.URLField("LookBook 대표 이미지 url")
 	title = models.CharField("제목", max_length=100)
 	content = models.TextField("내용")
-	# items = models.ManyToManyField(Item)
+	items = models.ManyToManyField(Item)
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	created_at = models.DateTimeField("등록일", auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -44,15 +44,3 @@ class Magazine(models.Model):
 
 	def __str__(self):
 		return 'magzine title : "{}"'.format(self.title)
-
-	@property
-	def get_content_type(self):
-		instance = self
-		content_type = ContentType.objects.get_for_model(instance.__class__)
-		return content_type
-
-		# @property
-	#   def comments(self):
-	#       instance = self
-	#       qs = Comment.objects.filter_by_instance(instance)
-	#       return qs

@@ -51,7 +51,7 @@ export default new Vuex.Store({
   // 비동기
   actions: {
   	getLookBook(context) {
-			axios.get('/api/lookbook/').then(function(res) {
+			axios.get('/api/magazines/').then(function(res) {
 				context.commit('successToGetLookBook',res.data);
 			}).catch(function() {
 			});
@@ -63,13 +63,13 @@ export default new Vuex.Store({
 			});
 		},
 		getBrandItems(context) {
-			axios.get('/api/brandItemList/').then(function(res) {
+			axios.get('/api/item/brand/').then(function(res) {
 				context.commit('succestToGetBrandItem',res.data);
 			}).catch(function() {
 			});
 		},
 		getItems(context) {
-			axios.get('/api/items/').then(function(res) {
+			axios.get('/api/item/').then(function(res) {
 				res.data.forEach((item) => { 
 	        item.checked = false; 
 	      });
@@ -92,22 +92,22 @@ export default new Vuex.Store({
 			// }).catch(function() {
 			// });
 		},
-		addStyleShare(context, payload) {
-			let data = new FormData();
-			data.append('tags', {"tag": "aaa"});
-			data.append('tags', {"tag": "bbb"});
-			window.console.log(payload);
-			let config = {
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				}
-			};
-			axios.post('/api/styleshare/', data, config).then(function(res){
-				window.console.log(res);
-			}).catch(function(err){
-				window.console.log(err);
-			});
-		},
+		// addStyleShare(context, payload) {
+		// 	let data = new FormData();
+		// 	data.append('tags', {"tag": "aaa"});
+		// 	data.append('tags', {"tag": "bbb"});
+		// 	window.console.log(payload);
+		// 	let config = {
+		// 		headers: {
+		// 			'Content-Type': 'multipart/form-data'
+		// 		}
+		// 	};
+		// 	axios.post('/api/styleshare/', data, config).then(function(res){
+		// 		window.console.log(res);
+		// 	}).catch(function(err){
+		// 		window.console.log(err);
+		// 	});
+		// },
 		checkedItem(context, payload){
 			context.commit('checkedItem', payload);
 		}

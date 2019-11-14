@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # project apps
     'magazine.apps.MagazineConfig',
     'styleshare.apps.StyleshareConfig',
-    'user.apps.UserConfig'
+    'item.apps.ItemConfig',
+    'user.apps.UserConfig',
 ]
 
 REST_FRAMEWORK = {

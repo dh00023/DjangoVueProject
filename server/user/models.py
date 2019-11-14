@@ -50,7 +50,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         db_table = 'users'
 
     def __str__(self):
-        return "username: " + self.username
+        return self.username
 
     @property
     def is_staff(self):

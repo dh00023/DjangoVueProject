@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import urls
+from . import views
 from rest_framework_jwt.views import (
     obtain_jwt_token,
     verify_jwt_token,
@@ -31,8 +32,13 @@ urlpatterns = [
     path('api/auth/token/verify/', verify_jwt_token),
     path('api/auth/token/refresh/', refresh_jwt_token),
 
+    # vue
+    path('', views.HomeView.as_view(), name='home'),
+
     # api
-    path('api/magazines/', include('magazine.urls', 'magazine-api')),
-    # path('api/styleshare/', include('styleshare.urls', 'styleshare-api')),
+    path('api/magazines/', include('magazine.urls', 'magazines-api')),
+    path('api/item/', include('item.urls', 'items-api')),
+    path('api/styleshare/', include('styleshare.urls', 'styleshare-api')),
     path('api/users/', include('user.urls', 'users-api')),
 ]
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
