@@ -13,13 +13,13 @@
 	            <label for="recipient-name" class="col-form-label">이미지</label>
 	            <input type="file" accept="image/*" ref="image" id="image-file" @change="uploadImage($event)">
 	          </div>
-	          <div class="form-group">
+	          <!-- <div class="form-group">
 	            <label for="message-text" class="col-form-label">태그</label>
 	            <input type="text" class="form-control" id="tag" v-model="newTag" @keyup.enter="addTag">
 	            <div id="tags">
 	            	<span v-for="tag in getTags" :key="tag.id" class="tag-btn">#{{ tag }}</span>	
 	            </div>
-	          </div>
+	          </div> -->
 	          <label for="message-text" class="col-form-label">관련 상품</label>
 	          <ul class="form-group" id="check-list">
 	            <ItemCheckBox v-for="(item) in getItems" :key="item.itemCode" :item="item"/>
@@ -78,40 +78,18 @@
 				// const URL = 'api/upload/'; 
 				this.image = this.$refs.image.files[0];
 				window.console.log(this.image);
-
-		    // let data = new FormData();
-		    // data.append('file', event.target.files[0]); 
-
-		    // let config = {
-		    //   header : {
-		    //     'Content-Type' : 'image/*'
-		    //   }
-		    // }
-		    // axios.put(
-		    //   URL, 
-		    //   data,
-		    //   config
-		    // ).then(
-		    //   response => {
-		    //     window.console.log('image upload response > ', response);
-		    //   }
-		    // )
 			},
 			addStyleShare(){
 				let dataForm = new FormData();
 
-				// dataForm.append('image', this.image);
-				this.$store.state.addStyleShare.tags.forEach(function(tag){
-					dataForm.append('tags', tag);
+				dataForm.append('image', this.image);
+				this.$store.state.addStyleShare.items.forEach(function(item){
+					dataForm.append('items', item);
 				});
 
-				// var data = {};
-				// data.tags = this.$store.state.addStyleShare.tags;
-				// data.items = this.$store.state.addStyleShare.items;
-				// dataForm.append('data', JSON.stringify(data));
-
-				// dataForm.append('tags', this.$store.state.addStyleShare.tags);
-				// dataForm.append('items', this.$store.state.addStyleShare.items);
+				// this.$store.state.addStyleShare.tags.forEach(function(tag){
+				// 	dataForm.append('tags', tag);
+				// });
 				this.$store.dispatch('addStyleShare', dataForm);
 			}
 		}

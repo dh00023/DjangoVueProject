@@ -20,9 +20,9 @@
   	},
   	data() {
   		return {
-  			'itemCode': this.item.itemCode,
-	  		'itemName': this.item.itemName,
-	  		'imageUrl': this.item.imageUrl,
+  			'itemCode': this.item.item_code,
+	  		'itemName': this.item.item_name,
+	  		'imageUrl': this.item.image_url,
 	  		'price': this.item.price,
 	  		'checked': this.item.checked
   		}

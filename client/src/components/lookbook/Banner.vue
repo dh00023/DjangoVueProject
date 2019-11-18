@@ -22,7 +22,7 @@
 			return {
 				'id': this.banner.id,
 				'title': this.banner.title,
-				'bnrImageUrl': this.banner.bnrImageUrl
+				'bnrImageUrl': this.banner.bnr_image_url
 			}
 		},
 		computed: {

@@ -79,35 +79,19 @@ export default new Vuex.Store({
 		},
 		addTag(context, payload) {
 			context.commit('addTag', payload);
-			// let data = new FormData();
-			// data.append('tag', payload);
-
-			// let config = {
-			// 	headers: {
-			// 		'Content-Type': 'multipart/form-data'
-			// 	}
-			// };
-			// axios.post('/api/tag/',data,config).then(function(res) {
-			// 	window.console.log(res);
-			// }).catch(function() {
-			// });
 		},
-		// addStyleShare(context, payload) {
-		// 	let data = new FormData();
-		// 	data.append('tags', {"tag": "aaa"});
-		// 	data.append('tags', {"tag": "bbb"});
-		// 	window.console.log(payload);
-		// 	let config = {
-		// 		headers: {
-		// 			'Content-Type': 'multipart/form-data'
-		// 		}
-		// 	};
-		// 	axios.post('/api/styleshare/', data, config).then(function(res){
-		// 		window.console.log(res);
-		// 	}).catch(function(err){
-		// 		window.console.log(err);
-		// 	});
-		// },
+		addStyleShare(context, payload) {
+			let config = {
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			};
+			axios.post('/api/styleshare/create/', payload, config).then(function(res){
+				window.console.log(res);
+			}).catch(function(err){
+				window.console.log(err.request.response);
+			});
+		},
 		checkedItem(context, payload){
 			context.commit('checkedItem', payload);
 		}

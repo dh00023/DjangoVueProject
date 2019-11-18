@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework import urls
 from . import views
 from rest_framework_jwt.views import (
@@ -32,13 +32,14 @@ urlpatterns = [
     path('api/auth/token/verify/', verify_jwt_token),
     path('api/auth/token/refresh/', refresh_jwt_token),
 
-    # vue
-    path('', views.HomeView.as_view(), name='home'),
-
     # api
     path('api/magazines/', include('magazine.urls', 'magazines-api')),
     path('api/item/', include('item.urls', 'items-api')),
     path('api/styleshare/', include('styleshare.urls', 'styleshare-api')),
     path('api/users/', include('user.urls', 'users-api')),
+
+    
+    # vue
+    re_path(r'^.*$', views.HomeView.as_view(), name='home'),
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

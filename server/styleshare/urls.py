@@ -1,9 +1,9 @@
 from django.urls import path
-from item import views
+from styleshare import views
 
-app_name = 'item-api'
+app_name = 'styleshare-api'
 
 urlpatterns = [
-    path('', views.ItemListAPIView.as_view(), name="list"),
-    path('create/', views.ItemCreateAPIView.as_view(), name="create"),
+    path('', views.StyleShareListAPIView.as_view(), name="list"),
+    path('create/', views.StyleShareCreateAPIView.as_view(), name="create"),
 ]

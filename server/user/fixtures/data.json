@@ -1,0 +1,13 @@
+[
+	{
+		"model": "user.user",
+		"fields":{
+			"email": "admin@example.com",
+			"username": "admin",
+			"is_admin": true,
+		  "date_joined": "2019-11-06T08:09:29",
+		  "password": "adminadmin!"
+		}
+	}
+]
+

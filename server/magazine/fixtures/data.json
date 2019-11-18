@@ -1,0 +1,28 @@
+[
+	{
+		"model": "magazine.magazine",
+		"fields": {
+			"title": "Ce& 19FW",
+			"bnr_image_url": "//thumb.cjmall.net/unsafe/750x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/12/1840506/99572969385059fd426ba5a78f5700bb5d8f3c96.jpg",
+			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201908/13/1219347/cea56d0080c82ed0bf1411d8931180863975b490.jpg",
+			"content": "Ce& will emerge as the epicenter of all young creators around the globe.",
+			"user_id": 1,
+			"items": [ "60233338", "60244458"],
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "magazine.magazine",
+		"fields": {
+			"title": "19 Fall/Winter Collection",
+	  	"bnr_image_url": "//thumb.cjmall.net/unsafe/750x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/12/1840506/99572969385059fd426ba5a78f5700bb5d8f3c96.jpg",
+			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201908/13/1219347/cea56d0080c82ed0bf1411d8931180863975b490.jpg",
+			"content": "Ce& will emerge as the epicenter of all young creators around the globe.",
+			"user_id": 1,
+			"items": [ "59098791", "59122710"],
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	}
+]

@@ -1,0 +1,42 @@
+[
+	{
+		"model": "styleshare.styleShare",
+		"fields": {
+			"image": "/static/media/IMG_4764_8NRtxQO.JPG",
+			"items": [ "59122710"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "styleshare.styleShare",
+		"fields": {
+			"image": "/static/media/IMG_4764_8NRtxQO.JPG",
+			"items": [ "59098791"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "styleshare.styleShare",
+		"fields": {
+			"image": "/static/media/IMG_4764_8NRtxQO.JPG",
+			"items": [ "59122710"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	},
+	{
+		"model": "styleshare.styleShare",
+		"fields": {
+			"image": "/static/media/IMG_4764_8NRtxQO.JPG",
+			"items": [ "59098791"],
+			"user_id": 1,
+			"created_at": "2019-11-06T08:09:29",
+			"updated_at": "2019-11-06T08:09:29"
+		}
+	}
+]

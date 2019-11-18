@@ -14,7 +14,7 @@
 
 	      <div class="modal-footer">
 	      	<ul>
-	      		<CommonItem v-for="(item) in items" :key="item.itemCode" :item="item"/>		
+	      		<CommonItem v-for="(item) in items" :key="item.item_code" :item="item"/>		
 	      	</ul>
 	      </div> 
 	    </div>
@@ -38,8 +38,8 @@
 		data() {
 			return {
 				'id': this.styleshare.id,
-				'author': this.styleshare.author,
-				'imageUrl': this.styleshare.imageUrl,
+				'author': this.styleshare.user,
+				'imageUrl': this.styleshare.image_url,
 				'items': this.styleshare.items,
 				'base_url': process.env.BASE_URL
 			}
