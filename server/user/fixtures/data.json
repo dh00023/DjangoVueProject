@@ -1,13 +1,18 @@
 [
 	{
-		"model": "user.user",
-		"fields":{
-			"email": "admin@example.com",
-			"username": "admin",
-			"is_admin": true,
-		  "date_joined": "2019-11-06T08:09:29",
-		  "password": "adminadmin!"
-		}
+	    "model": "user.user",
+	    "pk": 1,
+	    "fields": {
+	        "password": "pbkdf2_sha256$150000$jgPc7PADUpPY$3zxLTpxXMIdxpHOAMp8AWxpEpQPBgHubm1H4PzqlQIA=",
+	        "last_login": null,
+	        "is_superuser": false,
+	        "email": "admin@example.com",
+	        "username": "admin",
+	        "is_active": true,
+	        "is_admin": true,
+	        "date_joined": "2019-11-21T10:49:34.740",
+	        "groups": [],
+	        "user_permissions": []
+	    }
 	}
 ]
-

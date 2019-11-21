@@ -14,7 +14,6 @@ class StyleShareListSerializer(serializers.ModelSerializer):
             'id',
             'image',
             'items',
-            'tags',
             'user',
             'created_at',
         ]
@@ -27,9 +26,12 @@ class StyleShareListSerializer(serializers.ModelSerializer):
 #         ]
 
 class StyleShareCreateUpdateSerializer(serializers.ModelSerializer):
+    user = UserDetailSeiralizer(read_only=True)
     class Meta:
         model = StyleShare
         fields = [
             'image',
-            'items'
+            'items',
+            'user',
+            'created_at',
         ]

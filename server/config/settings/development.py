@@ -42,3 +42,5 @@ WEBPACK_LOADER = {
 # MEDIA_URL = '/media/' # media 파일에 대한 url prifix
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads') # 업로드된 파일을 저장할 디렉토리 경
 # INTERNAL_IPS = ('127.0.0.1',)
+MEDIA_URL = '/static/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')

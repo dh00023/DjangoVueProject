@@ -1,5 +1,5 @@
 <template>
-	<div class="modal fade" id="addStyle" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal fade" id="addStyle" tabindex="-1" role="dialog" aria-hidden="true" >
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -49,7 +49,8 @@
   	data() {
   		return{
   			image: '',
-  			newTag: ''
+  			newTag: '',
+  			showModal: false,
   		};
   	},
   	created() {
@@ -59,9 +60,9 @@
 			getItems() {
 				return this.$store.state.items;
 			},
-			getTags() {
-				return this.$store.state.addStyleShare.tags;
-			}
+			// getTags() {
+			// 	return this.$store.state.addStyleShare.tags;
+			// }
 		},
 		methods: {
 			addTag() {
@@ -91,6 +92,10 @@
 				// 	dataForm.append('tags', tag);
 				// });
 				this.$store.dispatch('addStyleShare', dataForm);
+				this.image='';
+				this.showModal=false;
+				document.getElementsByClassName('modal-backdrop').forEach(el=>el.remove())
+				this.$emit('close');
 			}
 		}
   }

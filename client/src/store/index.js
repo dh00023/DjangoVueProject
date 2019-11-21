@@ -46,6 +46,10 @@ export default new Vuex.Store({
   	},
   	checkedItem(state,payload){
   		state.addStyleShare.items.push(payload);
+  	},
+  	successCreateStyle(state, payload){
+  		state.styleshare.push(payload);
+  		
   	}
   },
   // 비동기
@@ -88,6 +92,7 @@ export default new Vuex.Store({
 			};
 			axios.post('/api/styleshare/create/', payload, config).then(function(res){
 				window.console.log(res);
+				context.commit('successCreateStyle', res.data);
 			}).catch(function(err){
 				window.console.log(err.request.response);
 			});

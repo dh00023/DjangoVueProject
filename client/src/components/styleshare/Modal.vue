@@ -8,7 +8,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <img :src="`${base_url}`+imageUrl" >
+	        <img :src="imageUrl" >
 	        <span>@{{ author }}</span>
 	      </div>
 
@@ -38,10 +38,9 @@
 		data() {
 			return {
 				'id': this.styleshare.id,
-				'author': this.styleshare.user,
-				'imageUrl': this.styleshare.image_url,
+				'author': this.styleshare.user.username,
+				'imageUrl': this.styleshare.image,
 				'items': this.styleshare.items,
-				'base_url': process.env.BASE_URL
 			}
 		}
 	}

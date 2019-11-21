@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<div id="styleButton" class="row justify-content-center">
-			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addStyle" data-whatever="@mdo">+내 스타일 공유하기+</button>	
+			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addStyle" @click="showModal = true">+내 스타일 공유하기+</button>	
 		</div>
 		
-		<StyleShareForm />
+		<StyleShareForm v-if="showModal" @close="showModal = false"/>
 		<div class="cards">
 			<StyleSharePost v-for="(styleshare) in getStyleShare" :key="styleshare.id" :styleshare="styleshare" />
 		</div>	
@@ -21,6 +21,11 @@
 			StyleSharePost,
 			StyleShareForm
 		},
+		data() {
+  		return {
+  			'showModal': false,
+  		}
+  	},
 		created() {
 			this.$store.dispatch('getStyleShare');
 		},

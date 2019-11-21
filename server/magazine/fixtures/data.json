@@ -2,12 +2,12 @@
 	{
 		"model": "magazine.magazine",
 		"fields": {
-			"title": "Ce& 19FW",
-			"bnr_image_url": "//thumb.cjmall.net/unsafe/750x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/12/1840506/99572969385059fd426ba5a78f5700bb5d8f3c96.jpg",
-			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201908/13/1219347/cea56d0080c82ed0bf1411d8931180863975b490.jpg",
+			"title": "Celepshop 19FW",
+			"bnr_image_url": "//thumb.cjmall.net/unsafe/750x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201908/19/1250625/794571c9ac8fb5787f8c7a8d397045eb2fa03ec6.jpg",
+			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/13/1952136/7991944776a8b27c0815c240cb6beb6866bf4fe1.jpg",
 			"content": "Ce& will emerge as the epicenter of all young creators around the globe.",
 			"user_id": 1,
-			"items": [ "60233338", "60244458"],
+			"items": [ "59098791", "59122710"],
 			"created_at": "2019-11-06T08:09:29",
 			"updated_at": "2019-11-06T08:09:29"
 		}
@@ -15,12 +15,12 @@
 	{
 		"model": "magazine.magazine",
 		"fields": {
-			"title": "19 Fall/Winter Collection",
+			"title": "New Ce& F/W",
 	  	"bnr_image_url": "//thumb.cjmall.net/unsafe/750x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/12/1840506/99572969385059fd426ba5a78f5700bb5d8f3c96.jpg",
-			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201908/13/1219347/cea56d0080c82ed0bf1411d8931180863975b490.jpg",
+			"main_image_url": "//thumb.cjmall.net/unsafe/640x0/image.cjmall.net/public/confirm/assets/tdp_cate_cont/201911/13/1952136/7991944776a8b27c0815c240cb6beb6866bf4fe1.jpg",
 			"content": "Ce& will emerge as the epicenter of all young creators around the globe.",
 			"user_id": 1,
-			"items": [ "59098791", "59122710"],
+			"items": [ "60233338", "60244458"],
 			"created_at": "2019-11-06T08:09:29",
 			"updated_at": "2019-11-06T08:09:29"
 		}

@@ -1,6 +1,6 @@
 <template>
 	<div class="card" id="style-card">
-		<img :src="`${base_url}`+imageUrl" class="card-img-top" data-toggle="modal" :data-target="'#styleShareModal'+id">
+		<img :src="imageUrl" class="card-img-top" data-toggle="modal" :data-target="'#styleShareModal'+id">
 		<StyleShareModal :styleshare="styleshare" />
 		<small class="text-muted">
 			author @<cite title="Source Title">{{ author }}</cite>
@@ -23,10 +23,9 @@
 		data() {
 			return {
 				'id': this.styleshare.id,
-				'author': this.styleshare.author,
-				'imageUrl': this.styleshare.imageUrl,
-				'items': this.styleshare.items,
-				'base_url': process.env.BASE_URL
+				'author': this.styleshare.user.username,
+				'imageUrl': this.styleshare.image,
+				'items': this.styleshare.items
 			}
 		}
 	}
