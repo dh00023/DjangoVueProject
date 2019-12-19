@@ -1,9 +1,30 @@
-# :bulb: New Brand Shop Project:bulb:
+# :bulb: New Brand Shop Project :bulb:
 
 ![Django](https://img.shields.io/badge/Django-v2.2.6-green)
 ![Pip](https://img.shields.io/badge/pypi-v19.3.1-blue)
 ![Vue](https://img.shields.io/badge/vue-3.11.0-green.svg)
 
+## 주제
+
+현재 브랜드관을 NEW 브랜드 샵으로 브랜드 마다 별도 운영하고 싶은 현업의 니즈가 있음.
+Django & Vue.js를 통해 어느정도 빠르게 현업에 제공할 수 있는지 프로젝트를 통해 파악.
+
+```
+newbrandshop(project)
+├── client(vue)
+│   ├── public
+│   └── src
+└── server(django)
+    ├── config
+    ├── item(app)
+    ├── magazine(app)
+    ├── styleshare(app)
+    └── user(app)
+```
+
+- 프로젝트 기간 : 2019.09.23 ~ 2019.11.22
+
+![wbs](./documents/wbs.png)
 
 ## :building_construction: Installation
 
@@ -47,6 +68,8 @@ $ cd server
 $ python manage.py runserver
 ```
 
+You have to <a href="./#migrate">migrate</a> before running.
+
 ### Client
 
 ```
@@ -84,7 +107,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## :floppy_disk:Database
+## :floppy_disk: Database
 
 ### create table
 
@@ -98,7 +121,7 @@ class ModelName(models.Model):
 	# fieldname = models.FieldType("comment", **validate)
 ```
 
-#### migrate
+<h3 id="migrate"> migrate </h3>
 
 ```
 $ python ./manage.py makemigrations
