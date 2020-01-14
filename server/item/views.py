@@ -32,17 +32,8 @@ class ItemListAPIView(ListAPIView):
     permission_classes = [AllowAny]
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['item_code', 'item_name', 'user__username']
+    queryset = Item.objects.all()
 
-    def get_queryset(self, *args, **kwargs):
-        queryset_list = Item.objects.all()
-        query = self.request.GET.get("query")
-        if query:
-            queryset_list = queryset_list.filter(
-                Q(user__username__icontains=query) |
-                Q(item_name__icontains=query) |
-                Q(item_code__icontains=query)
-            ).distinct()
-        return queryset_list
 
 class ItemCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]

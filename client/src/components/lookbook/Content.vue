@@ -5,7 +5,7 @@
 			<div class="card-body">
 				<h5 class="card-title">{{ title }}</h5>
 				<p class="card-text">
-					{{ text }}
+					{{ content }}
 				</p>
 				<CommonItem v-for="(item) in items" :key="item.item_code" :item="item" />
 			</div>
@@ -32,7 +32,7 @@
   			'id': this.lookbook.id,
 	  		'title': this.lookbook.title,
 	  		'mainImageUrl': this.lookbook.main_image_url,
-	  		'text': this.lookbook.text,
+	  		'content': this.lookbook.content,
 	  		'items': this.lookbook.items
   		}
   	}

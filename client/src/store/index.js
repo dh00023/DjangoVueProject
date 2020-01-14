@@ -49,7 +49,7 @@ export default new Vuex.Store({
   	},
   	successCreateStyle(state, payload){
   		state.styleshare.push(payload);
-  		
+  		state.addStyleShare.tags = [];
   	}
   },
   // 비동기

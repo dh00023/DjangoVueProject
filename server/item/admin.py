@@ -23,5 +23,6 @@ class ItemAdmin(admin.ModelAdmin):
 		obj.user = request.user
 		super().save_model(request, obj, form, change)
 
-	# def get_styleshare(self, request):
-	# 	return list(request.styleshare_set.all())
+
+
+# admin.site.register(Item)

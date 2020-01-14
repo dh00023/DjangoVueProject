@@ -9,9 +9,11 @@
 	      </div>
 	      <div class="modal-body">
 	        <img :src="imageUrl" >
+	        <div id="tags">
+	        	<span v-for="tag in tags" :key="tag.name" class="tag-btn">#{{ tag.name }}</span>	
+	        </div>
 	        <span>@{{ author }}</span>
 	      </div>
-
 	      <div class="modal-footer">
 	      	<ul>
 	      		<CommonItem v-for="(item) in items" :key="item.item_code" :item="item"/>		
@@ -41,6 +43,7 @@
 				'author': this.styleshare.user.username,
 				'imageUrl': this.styleshare.image,
 				'items': this.styleshare.items,
+				'tags': this.styleshare.tags
 			}
 		}
 	}
@@ -57,5 +60,18 @@
 	}
 	ul{
 		padding: 0;
+	}
+	#tags {
+		margin: 1rem 0;
+	}
+	.tag-btn {
+		color: #007bff;
+		border: 2px groove #007bff;
+    background-color: white;
+    padding: 3px;
+    margin-right: 3px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 12px;
 	}
 </style>
