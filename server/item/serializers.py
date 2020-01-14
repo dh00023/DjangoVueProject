@@ -9,6 +9,7 @@ class ItemListSerializer(serializers.ModelSerializer):
         model = Item
         fields = [
             'item_code',
+            'item_name',
             'image_url',
             'price',
             'user',
@@ -21,6 +22,7 @@ class ItemDetailSerializer(serializers.ModelSerializer):
         model = Item
         fields = [
             'item_code',
+            'item_name',
             'image_url',
             'price',
             'user',

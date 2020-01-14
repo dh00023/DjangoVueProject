@@ -13,13 +13,13 @@
 	            <label for="recipient-name" class="col-form-label">이미지</label>
 	            <input type="file" accept="image/*" ref="image" id="image-file" @change="uploadImage($event)">
 	          </div>
-	          <!-- <div class="form-group">
+	          <div class="form-group">
 	            <label for="message-text" class="col-form-label">태그</label>
 	            <input type="text" class="form-control" id="tag" v-model="newTag" @keyup.enter="addTag">
 	            <div id="tags">
 	            	<span v-for="tag in getTags" :key="tag.id" class="tag-btn">#{{ tag }}</span>	
 	            </div>
-	          </div> -->
+	          </div>
 	          <label for="message-text" class="col-form-label">관련 상품</label>
 	          <ul class="form-group" id="check-list">
 	            <ItemCheckBox v-for="(item) in getItems" :key="item.itemCode" :item="item"/>
@@ -60,9 +60,9 @@
 			getItems() {
 				return this.$store.state.items;
 			},
-			// getTags() {
-			// 	return this.$store.state.addStyleShare.tags;
-			// }
+			getTags() {
+				return this.$store.state.addStyleShare.tags;
+			}
 		},
 		methods: {
 			addTag() {
@@ -84,17 +84,25 @@
 				let dataForm = new FormData();
 
 				dataForm.append('image', this.image);
+				
 				this.$store.state.addStyleShare.items.forEach(function(item){
 					dataForm.append('items', item);
 				});
 
-				// this.$store.state.addStyleShare.tags.forEach(function(tag){
-				// 	dataForm.append('tags', tag);
-				// });
+				this.$store.state.addStyleShare.tags.forEach(function(tag){
+					dataForm.append('tags', tag);
+				});
+				
 				this.$store.dispatch('addStyleShare', dataForm);
 				this.image='';
 				this.showModal=false;
-				document.getElementsByClassName('modal-backdrop').forEach(el=>el.remove())
+				
+				var modalBackdrop = document.getElementsByClassName('modal-backdrop')[0];
+				var modalOpen = document.getElementsByClassName('modal-open')[0];
+
+				modalOpen.classList.toggle('modal-open',false);
+				modalBackdrop.remove();
+
 				this.$emit('close');
 			}
 		}

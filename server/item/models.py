@@ -23,3 +23,10 @@ class Item(models.Model):
 
 	def __str__(self):
 		return 'item Code : "{}", item name : "{}"'.format(self.item_code, self.item_name)
+
+# CREATE TABLE "new__items" ("user_id" integer NOT NULL REFERENCES "users" ("id") DEFERRABLE INITIALLY DEFERRED, "item_code" varchar(8) NOT NULL PRIMARY KEY, "item_name" varchar(100) NOT NULL, "image_url" varchar(200) NOT NULL, "price" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+# INSERT INTO "new__items" ("item_code", "item_name", "image_url", "price", "created_at", "updated_at", "user_id") SELECT "item_code", "item_name", "image_url", "price", "created_at", "updated_at", NULL FROM "items";
+# DROP TABLE "items";
+# ALTER TABLE "new__items" RENAME TO "items";
+# CREATE INDEX "items_user_id_1c6eb173" ON "items" ("user_id");
+# COMMIT;
