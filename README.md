@@ -7,7 +7,7 @@
 ## 주제
 
 현재 브랜드관을 NEW 브랜드 샵으로 브랜드 마다 별도 운영하고 싶은 현업의 니즈가 있음.
-Django & Vue.js를 통해 어느정도 빠르게 현업에 제공할 수 있는지 프로젝트를 통해 파악.
+Django & Vue.js를 통해 어느정도 빠르게 현업에 제공할 수 있는지 프로토타입 구현을 통해 파악.
 
 ```
 newbrandshop(project)
@@ -211,3 +211,8 @@ $ ./manage.py dumpdata styleshare.StyleShare --indent 4 > styleshare/fixtures/da
 ## Django Admin
 
 - [http://demo.jet.geex-arts.com/admin/](http://demo.jet.geex-arts.com/admin/)
+
+## 관련 내용 정리 문서
+
+- [Vue.js](https://dh00023.gitbooks.io/vue-js/content/)
+- [Django](https://dh00023.gitbooks.io/django/content/)
